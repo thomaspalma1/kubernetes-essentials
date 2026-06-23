@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: multicontainer-pod
+  name: multicontainer-pod
+spec:
+  containers:
+  - image: httpd
+    name: httpd
+  - image: alpine
+    name: debug
+    command: # If this command is removed, the container will exit immediately, causing CrashLoopBackOff and preventing it from starting.
+      - "sleep"
+      - "999999999"
