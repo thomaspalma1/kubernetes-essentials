@@ -1,0 +1,38 @@
+# Kubeconfig and credentials
+kubeconfig
+kubeconfig.yaml
+kubeconfig*.yaml
+*.kubeconfig
+.kube/
+
+# Secrets and sensitive variables
+*.env
+.env
+secrets/
+*-secret.yaml
+*.key
+*.pem
+*.crt
+
+# Helm
+charts/*/charts/
+*.tgz
+
+# Terraform (in case you provision infra later)
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# Logs and local tooling artifacts (kind, minikube, k3d)
+*.log
+kind-logs/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Operating system
+.DS_Store
+Thumbs.db
