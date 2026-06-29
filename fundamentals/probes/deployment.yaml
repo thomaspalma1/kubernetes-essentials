@@ -17,3 +17,7 @@ spec:
       containers:
       - image: nginx
         name: nginx
+        readinessProbe:
+          httpGet:
+            path: "/"
+            port: 80
