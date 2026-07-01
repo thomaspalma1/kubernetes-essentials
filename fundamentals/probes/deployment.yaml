@@ -17,6 +17,9 @@ spec:
       containers:
       - image: nginx
         name: nginx
+        env:
+          - name: ENVIRONMENT
+            value: development
         readinessProbe:
           httpGet:
             path: "/"
