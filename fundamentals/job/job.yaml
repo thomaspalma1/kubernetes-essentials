@@ -1,15 +1,17 @@
 apiVersion: batch/v1
-kind: Job
+kind: CronJob
 metadata:
   name: echo-command
 spec:
-  template:
+  schedule: "* * * * *"
+  jobTemplate:
     spec:
-      containers:
-      - name: sleep
-        image: alpine
-        command:
-          - echo
-          - "Just testing"
-      restartPolicy: "OnFailure"
-  ttlSecondsAfterFinished: 0
+      template:
+        spec:
+          containers:
+            - name: sleep
+              image: alpine
+              command:
+                - echo
+                - "Just testing"
+          restartPolicy: OnFailure
