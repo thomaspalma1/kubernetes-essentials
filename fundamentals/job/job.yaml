@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: echo-command
+spec:
+  template:
+    spec:
+      containers:
+      - name: sleep
+        image: alpine
+        command:
+          - echo
+          - "Just testing"
+      restartPolicy: "OnFailure"
+  ttlSecondsAfterFinished: 0
