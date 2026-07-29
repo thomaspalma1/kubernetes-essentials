@@ -50,9 +50,8 @@ metadata:
   name: nginx
   namespace: default
 spec:
+  selector:
+    app: nginx
   ports:
     - port: 80
-      selector:
-  app: nginx
-type: LoadBalancer
-
+  type: LoadBalancer
