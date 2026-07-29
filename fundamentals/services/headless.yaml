@@ -9,4 +9,5 @@ spec:
   - name: https
     port: 80
     targetPort: 80
-  type: None
+  type: ClusterIP
+  clusterIP: None
