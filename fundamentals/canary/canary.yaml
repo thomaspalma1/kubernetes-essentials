@@ -6,7 +6,7 @@ metadata:
   name: nginx-blue
   namespace: default
 spec:
-  replicas: 0
+  replicas: 5
   selector:
     matchLabels:
       app: nginx
@@ -28,7 +28,7 @@ metadata:
   name: nginx-green
   namespace: default
 spec:
-  replicas: 10
+  replicas: 5
   selector:
     matchLabels:
       app: nginx
