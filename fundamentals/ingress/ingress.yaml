@@ -7,6 +7,10 @@ metadata:
 
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts: 
+      - "*.demo.com"
+    secretName: demo-domain-secret
   rules:
   - host: "nginx.demo.com"
     http:
