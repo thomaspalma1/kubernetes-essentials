@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-demo
+data:
+  virtual_host: "vhost1.localhost.com"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        env: 
+        - name: VIRTUAL_HOST
+          valueFrom: 
+            configMapKeyRef:
+              name: nginx-demo
+              key: virtual_host
