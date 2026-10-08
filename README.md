@@ -26,59 +26,7 @@ Container images used in the examples: `nginx`, `httpd`, `alpine`, `busybox`, an
 
 ## Repository structure
 
-```text
-kubernetes-essentials/
-├── fundamentals/
-│   ├── blue-green/
-│   │   └── blue_green.yaml            # nginx-blue/nginx-green Deployments + nginx Service
-│   ├── canary/
-│   │   └── canary.yaml                # nginx-blue/nginx-green Deployments + nginx Service (LoadBalancer)
-│   ├── cluster-setup/
-│   │   └── kind-config.yaml           # kind cluster configuration
-│   ├── configmap_secrets/
-│   │   └── configmap.yaml             # ConfigMap injected as an environment variable
-│   ├── configmaps/
-│   │   ├── configmap-nginx.yaml       # ConfigMap holding an nginx configuration
-│   │   └── pod-using-configmap.yaml   # Pod that mounts the ConfigMap as a file
-│   ├── daemonset/
-│   │   └── daemonset.yaml             # nginx DaemonSet
-│   ├── deployments/
-│   │   ├── deployment-httpd.yaml      # httpd Deployment
-│   │   └── deployment-nginx.yaml      # webserver Deployment (nginx)
-│   ├── goldilocks/
-│   │   └── values.yaml                # Goldilocks Helm chart values
-│   ├── ingress/
-│   │   └── ingress.yaml               # Ingress with host-based routing and TLS
-│   ├── job/
-│   │   └── job.yaml                   # CronJob
-│   ├── metallb/
-│   │   └── manifests.yaml             # IPAddressPool + L2Advertisement
-│   ├── out-of-memory/
-│   │   └── oom.yaml                   # Deployment that exceeds its memory limit
-│   ├── pdb/
-│   │   └── pdb.yaml                   # PodDisruptionBudget
-│   ├── pods/
-│   │   ├── pod-multicontainer.yaml    # Pod with two containers
-│   │   └── pod-simple.yaml            # Simple Pod in the essentials namespace
-│   ├── probes/
-│   │   └── deployment.yaml            # Deployment with readiness and liveness probes
-│   ├── security/
-│   │   └── pod-security-context.yaml  # Pod- and container-level securityContext
-│   ├── services/
-│   │   ├── external_name.yaml         # ExternalName Service
-│   │   ├── headless.yaml              # Headless Service
-│   │   ├── loadbalancer.yaml          # LoadBalancer Service
-│   │   └── services.yaml              # ClusterIP Service
-│   ├── statefulset/
-│   │   └── statefulset.yaml           # StatefulSet with volumeClaimTemplates
-│   └── storage/
-│       ├── pod-using-pvc.yaml         # Pod that uses the PVC
-│       ├── pv-hostpath.yaml           # hostPath PersistentVolume
-│       └── pvc-basic.yaml             # PersistentVolumeClaim
-├── .gitignore
-├── LICENSE
-└── README.md
-```
+![Repository structure](docs/diagram.png)
 
 `.gitignore` keeps out of version control: kubeconfigs, `.env` files, keys and certificates (`*.key`, `*.crt`, `*.pem`), `*-secret.yaml` files and the `secrets/` directory, Helm packages, Terraform state, logs, and editor and OS files.
 
